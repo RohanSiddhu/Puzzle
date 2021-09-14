@@ -9,3 +9,14 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+[Bb][Uu][Ii][Ll][Dd]/
+[Oo][Uu][Tt]/
+
+*.[Ee][Xx][Ee]
+
+# Visual Studio
+.vs/
+
+# Text Editors
+*~
