@@ -92,7 +92,6 @@ class GameFrame(ttk.Frame):
     
     def key_press(self, event):
         key = event.keysym
-        print("<key>", key, sep = ' ')
         if key == 'Right':
             if self.emptyTile % 4:
                 TileOrderList[self.emptyTile], TileOrderList[self.emptyTile - 1] = TileOrderList[self.emptyTile - 1], TileOrderList[self.emptyTile]
