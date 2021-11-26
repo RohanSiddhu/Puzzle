@@ -17,7 +17,6 @@ TileOrderTuple = (
 )
 
 TileOrderList = list(TileOrderTuple)
-keycode = {'Left': 37, 'Right': 39, 'Up': 38, 'Down': 40}
 
 
 # Application class
@@ -92,21 +91,21 @@ class GameFrame(ttk.Frame):
             return True
     
     def key_press(self, event):
-        key = event.keycode
+        key = event.keysym
         print("<key>", key, sep = ' ')
-        if key == keycode['Right']:
+        if key == 'Right':
             if self.emptyTile % 4:
                 TileOrderList[self.emptyTile], TileOrderList[self.emptyTile - 1] = TileOrderList[self.emptyTile - 1], TileOrderList[self.emptyTile]
                 self.emptyTile -= 1
-        elif key == keycode['Left']:
+        elif key == 'Left':
             if self.emptyTile % 4 != 3:
                 TileOrderList[self.emptyTile], TileOrderList[self.emptyTile + 1] = TileOrderList[self.emptyTile + 1], TileOrderList[self.emptyTile]
                 self.emptyTile += 1
-        elif key == keycode['Down']:
+        elif key == 'Down':
             if self.emptyTile // 4:
                 TileOrderList[self.emptyTile], TileOrderList[self.emptyTile - 4] = TileOrderList[self.emptyTile - 4], TileOrderList[self.emptyTile]
                 self.emptyTile -= 4
-        elif key == keycode['Up']:
+        elif key == 'Up':
             if self.emptyTile // 4 != 3:
                 TileOrderList[self.emptyTile], TileOrderList[self.emptyTile + 4] = TileOrderList[self.emptyTile + 4], TileOrderList[self.emptyTile]
                 self.emptyTile += 4
